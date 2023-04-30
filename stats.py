@@ -181,6 +181,7 @@ def show_raw_data(city):
             show_more = input("Enter 'y' to see more data\n")
             if show_more.lower() == 'y':
                  print(df[x:x+5])
+                 x= x+5
             else:
                 break
 
