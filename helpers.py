@@ -11,7 +11,7 @@ def path_builder(arg):
     return path
 
 def not_in_range(argument):
-    print("{} is not in range!{}".format(argument, line_spacing(2)))
+    print(f"{argument} is not in range!{line_spacing(2)}")
     print("Restarting application", line_spacing(3)) 
 
 def run_error_msg(v_error):
@@ -24,10 +24,10 @@ def convert_hour_mode(hour):
     elif hour == 12:
         return "12PM"
     elif hour >=1 and hour <12:
-        return "{}AM".format(hour)
+        return f"{hour}AM"
     else:
         hour = hour%12
-        return "{}PM".format(hour)
+        return f"{hour}PM"
 
 def choose_city():
     """
@@ -35,7 +35,7 @@ def choose_city():
     """
     while True:
         try:
-            user_choice = int(input("Please enter a number 1-3 for Chicago, New York, or D.C respectively {}".format(line_spacing())))
+            user_choice = int(input("Please enter a number 1-3 for Chicago, New York, or D.C respectively \n"))
             if user_choice in APP_CITIES:
                 return APP_CITIES[user_choice]
             else:
@@ -47,7 +47,7 @@ def choose_city():
 def choose_time_filter():
     while True:
         try:
-            filter_choice = int(input("{}Would you like to filter by month(1), day(2), or not at all(3)?{}".format(line_spacing(2), line_spacing())))
+            filter_choice = int(input(f"{line_spacing(2)}Would you like to filter by month(1), day(2), or not at all(3)?\n"))
             if filter_choice in FILTERS:
                 return FILTERS[filter_choice]
             else:
@@ -59,7 +59,7 @@ def choose_time_filter():
 def choose_month():
     while True:
         try:
-            choice = int(input("Please enter a number in range 1-6 for Jan - Jun:{}".format(line_spacing())))
+            choice = int(input("Please enter a number in range 1-6 for Jan - Jun:\n"))
             if choice in MONTHS:
                 return choice
             else:
@@ -71,7 +71,7 @@ def choose_month():
 def choose_day():
     while True:
         try:
-            choice = int(input("Please enter a number in range 1-7 for Sun-Sat:{}".format(line_spacing())))
+            choice = int(input("Please enter a number in range 1-7 for Sun-Sat:\n"))
             if choice in DAYS_OF_WEEK:
                 return choice
             else:
@@ -81,6 +81,7 @@ def choose_day():
             run_error_msg(v_error)
 
 def line_spacing(num_spaces = 1):
+    """adds a n number of newlines to  astring where n is the argument"""
     return "\n"*num_spaces
 
 def next_stat():
