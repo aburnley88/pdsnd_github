@@ -8,6 +8,9 @@ the following cities:
 2. Chicago
 3. Washington D.C.
 
+## Date Created
+Submitted the project for review on 25 April 2023
+
 ## Start Up
 Users of this application would need to request copies of the data which are in csv format.
 Once they have the files open up a terminal, navigate to the appropriate folder, and run: 
