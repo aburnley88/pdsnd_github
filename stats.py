@@ -152,22 +152,22 @@ def show_user_info_stats(df):
     start_time = t.time()
     print("Calculating user statistics...")
     user_types = df.groupby(['User Type'])['User Type'].count()
-    print("The user type stats are: {}".format(user_types))
+    print(f"The user type stats are: {user_types}")
     try:
         genders = df.groupby(['Gender'])['Gender'].count()
-        print("The count of genders is: {}".format(genders))
+        print(f"The count of genders is: {genders}")
     except:
         print("No gender data for the selected city")
     try:
         earliest_birth_year = sorted(df.groupby(['Birth Year'])['Birth Year'])[0][0]
         latest_birth_year = sorted(df.groupby(['Birth Year'])['Birth Year'], reverse=True)[0][0]
         most_common_birth_year = df['Birth Year'].mode()[0]
-        print("The earliest birth year is: {}".format(earliest_birth_year))
-        print("The latest birth year is: {}".format(latest_birth_year))
-        print("The most common birth year is: {}".format(most_common_birth_year))
+        print(f"The earliest birth year is: {earliest_birth_year}")
+        print(f"The latest birth year is: {latest_birth_year}")
+        print(f"The most common birth year is: {most_common_birth_year}")
     except:
         print("No birth year for the selected city")
-    print("\nThis took {} seconds.".format((t.time() - start_time)))
+    print(f"\nThis took {t.time() - start_time} seconds.")
 
 def show_raw_data(city):
     """show raw data option"""
@@ -181,6 +181,7 @@ def show_raw_data(city):
             show_more = input("Enter 'y' to see more data\n")
             if show_more.lower() == 'y':
                  print(df[x:x+5])
+                 x= x+5
             else:
                 break
 
