@@ -19,6 +19,12 @@ def run_error_msg(v_error):
     print("Please make a valid selection")
 
 def convert_hour_mode(hour):
+    """
+        Input: takes in an integer
+        Output: returns a string
+        converts an int (0 -24) to a time of day
+        ie 13 => 1pm
+    """
     if hour == 0:
         return "12AM"
     elif hour == 12:
